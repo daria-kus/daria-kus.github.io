@@ -10,7 +10,11 @@ const appV = Vue.createApp({
       this.todo = event.target.value;
     },
     addToDo() {
+      if (this.inputValue === '') {
+        alert("Please write your to do")
+      } else {
       this.todos.push(this.inputValue);
+      }
     },
     removeToDo(){
       this.todos.pop();
