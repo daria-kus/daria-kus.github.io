@@ -7,38 +7,36 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="list">
-        <div class="list__header">
-            <h2 class="title title__fz48 list__title">My TodoList</h2>
-            <button class="list__rename">
-                <img src="img/todo/622400_pen_pencil_edit_write_writing_icon.png" alt="rename">
-            </button>
-        </div>
-                <ul class="list_items">
-            <li class="list_item title__fz36">
-                <input type="checkbox" class="list_checkbox">
-                Sport
-            </li>
-            <li class="list_item title__fz36">
-                <input type="checkbox">
-                Cooking
-            </li>
-            <li class="list_item title__fz36">
-                <input type="checkbox">
-                Walking
-            </li>
-            <li class="list_item title__fz36">
-                <input type="checkbox">
 
-            </li>
-            <li class="list_item title__fz36">
-                <input type="checkbox">
-            </li>
-    </ul>
-    <button class="btn"> 
+<section class="list">
+    <div class="list__header">
+        <h2 class="title title__fz48 list__title">My TodoList</h2>
+        <button class="list__rename">
+            <img src="img/todo/622400_pen_pencil_edit_write_writing_icon.png" alt="rename">
+        </button>
+    </div>
+
+    <input type="text" id="todo" v-model="inputValue"/>
+    <button class="btn newtd title__fz14" @click="addToDo()"> 
         <a href="#" class="newtd title__fz14"> New ToDo </a> 
     </button>
-</div>
-    <script src="js/todo.js"></script>
+    <button class="btn remove" @click="removeToDo()"> 
+        <a href="#" class="newtd title__fz14"> Delete </a> 
+    </button>
+    <p v-if="todos.length === 0" class="notd title__fz20"> You don't have any ToDos yet </p>
+    <ul v-if="todos.length>0" class="list_items">
+        <li class="newtd title__fz20" v-for="todo in todos">{{todo}}</li>
+    </ul>
+</section>
+<!--   <input type="text" id="myInput">
+
+  <button onclick='add()'>Click me!</button>
+  <button onclick="remove()">Delete</button>
+
+  <ul id="myUL">
+     <div id="myDiv"></div>
+  </ul> -->
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="js/todo.js"></script>
 </body>
 </html>
