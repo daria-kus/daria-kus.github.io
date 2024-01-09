@@ -25,7 +25,7 @@
     </button>
     <p v-if="todos.length === 0" class="notd title__fz20"> You don't have any ToDos yet </p>
     <ul v-if="todos.length>0" class="list_items">
-        <li class="list_items-item newtd title__fz20" v-for="todo in todos">{{todo}}</li>
+        <li class="list_items-item newtd title__fz20" v-for="(todo, index) in todos" @click="removeToDo(index)">{{todo}}</li>
     </ul>
 </section>
 <!--   <input type="text" id="myInput">

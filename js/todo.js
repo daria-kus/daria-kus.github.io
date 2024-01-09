@@ -16,8 +16,8 @@ const appV = Vue.createApp({
       this.todos.push(this.inputValue);
       }
     },
-    removeToDo(){
-      this.todos.pop();
+    removeToDo(idx){
+      this.todos.splice(idx, 1);
     }    
   }
 })
